@@ -14,7 +14,7 @@ body {
 
 
 div {
-    width: 50vw;
+    width: 80vw;
     height: 70vh;
     background-color: white;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
@@ -27,7 +27,7 @@ div {
     height: 15vh;
     position: absolute;
     bottom: 0;
-    
+
 }
 
 .cactus {
@@ -35,31 +35,35 @@ div {
     height: 15vh;
     position: absolute;
     bottom: 0;
-    animation: move 1.5s linear infinite  ;
-    
+    animation: move 1.5s linear infinite;
+
 }
 
 @keyframes move {
     0% {
-        transform: translate(600%);
+        right: 0;
     }
 
+    100% {
+        right: calc(100% - 5vw);
+    }
 }
 
-.jump{
-    animation: IsJump 0.5s linear ;
+.jump {
+    animation: IsJump 0.5s linear;
 }
+
 @keyframes IsJump {
-    0%{
+    0% {
         bottom: 0;
     }
 
-    50%{
-        bottom: 25vh ;
+    50% {
+        bottom: 25vh;
     }
 
-    100%{
+    100% {
         bottom: 0;
     }
-    
+
 }

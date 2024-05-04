@@ -14,18 +14,18 @@ window.addEventListener("keydown", (event) => {
 }
 )
 
-let hauteurCactusVh = parseInt(window.getComputedStyle(cactus).getPropertyValue('heigth'),10);
-
-let largeurCactusVw =parseInt(window.getComputedStyle(cactus).getPropertyValue('width'),10);
-let hauteurCactus =(hauteurCactusVh /100)*window.innerHeigth;
-let largeurCactus =(largeurCactusVw /100)*window.innerWidth;
-
-let hauteurDinosVh = parseInt(window.getComputedStyle(dino).getPropertyValue('heigth'),10);
-
-let largeurDinoVw =parseInt(window.getComputedStyle(dino).getPropertyValue('width'),10);
-let hauteurDino =(hauteurCactusVh /100)*window.innerHeigth;
-let largeurDino =(largeurCactusVw /100)*window.innerWidth;
-
-if (hauteurCactus === hauteurDino && largeurCactus === largeurDino) {
-    alert('Game Over')
-}
+function checkCollision() {
+    const dinoRect = dino.getBoundingClientRect();
+    const cactusRect = cactus.getBoundingClientRect();
+  
+    if (
+      dinoRect.right > cactusRect.left &&
+      dinoRect.left < cactusRect.right &&
+      dinoRect.bottom > cactusRect.top &&
+      dinoRect.top < cactusRect.bottom
+    ) {
+      alert("Game Over");
+    }
+  }
+  
+  setInterval(checkCollision, 10);
