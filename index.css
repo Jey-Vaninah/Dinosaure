@@ -10,15 +10,18 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+    background-color: black;
 }
 
 
-div {
+.contenue{
     width: 80vw;
     height: 70vh;
     background-color: white;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 1px rgb(239, 237, 237);
     position: relative;
+    background-color: black;
 
 }
 
@@ -37,6 +40,12 @@ div {
     bottom: 0;
     animation: move 1.5s linear infinite;
 
+}
+
+.score{
+   color: green; 
+   font-size: 3rem;
+   margin-top: 2vh;
 }
 
 @keyframes move {

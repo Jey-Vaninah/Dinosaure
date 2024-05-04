@@ -1,6 +1,6 @@
 const dino = document.querySelector(".dinosaure")
 const cactus = document.querySelector('.cactus')
-let scrore = 0;
+let score = 0;
 
 window.addEventListener("keydown", (event) => {
     if (event.key == " ") {
@@ -23,9 +23,16 @@ function checkCollision() {
       dinoRect.left < cactusRect.right &&
       dinoRect.bottom > cactusRect.top &&
       dinoRect.top < cactusRect.bottom
-    ) {
-      alert("Game Over");
+    ) 
+    {
+      alert("Game Over.Your score: "+score);
     }
+
+
+  }
+  function updateScore(){
+    const scoreElement =document.querySelector('.score');
+    scoreElement.textContent = "score:"+score
   }
   
   setInterval(checkCollision, 10);
